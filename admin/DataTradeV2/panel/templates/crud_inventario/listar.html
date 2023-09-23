@@ -1,0 +1,33 @@
+{% extends '../index_master.html' %}
+
+{% block content %}
+<div class="right_col" role="main">
+    <h1>listar</h1>
+    
+    <table class="table ">
+        <thead>
+          <tr>
+            <th scope="col">Código producto</th>
+            <th scope="col">Nombre producto</th>
+            <th scope="col">Valor unidad</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Fecha registro</th>
+          </tr>
+        </thead>
+
+        <tbody>        
+        {% for u in productos %}
+          <tr>
+            <td>{{ u.codProducto }}</td>
+            <td>{{ u.nombreProducto }}</td>
+            <td>{{ u.valorUnidad }}</td>
+            <td>{{ u.cantidadProducto }}</td>
+            <td>{{ u.fechaRegistro }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      
+      </table>
+    
+</div>
+{% endblock %}
