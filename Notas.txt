@@ -1,0 +1,12 @@
+Usuario Admin
+User: admindatatradev2
+Password: admindatatradev2
+
+Ruta:
+OneDrive\Documentos\Universidad\SENA\DataTradeV2\admin\Scripts
+
+Entorno:
+env\Scripts\activate.bat
+
+Ejecutar:
+python manage.py runserver

@@ -2,18 +2,30 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Inventario
 
+from django.contrib.auth.decorators import login_required
+
+
+
+
 # Create your views here.
+
 TEMPLATE_DIRS = (
     'os.path.join(BASE_DIR, "templates")'
 )
 
+
+
 def index(request):
     return render(request, "index.html")
+
+
 
 def listar(request):
     listaproductos = Inventario.objects.all()
     datoslistaproductos = {'productos':listaproductos}
     return render(request, "crud_inventario/listar.html", datoslistaproductos)
+
+@login_required
 
 def agregar(request):
     if request.method == "POST":
